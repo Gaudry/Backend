@@ -1,0 +1,17 @@
+Django
+djangorestframework
+gunicorn
+numpy
+pandas
+psycopg2
+Pillow
+django-cors-headers
+requests
+django-rest-auth
+PyJWT
+django-cors-headers
+mailersend
+load-dotenv
+python-settings
+django-environ
+googletrans

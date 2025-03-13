@@ -1,0 +1,475 @@
+[21/Jan/2025 01:02:46] DEBUG [django.db.backends:151] (0.016) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:02:46] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:02:56] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 116, in get
+    return response(response)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:02:56] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 97260
+[21/Jan/2025 01:04:09] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:04:09] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:04:12] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 116, in get
+    return response(response)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:04:12] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 97266
+[21/Jan/2025 01:04:40] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:04:40] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:04:43] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 117, in get
+    return response(response)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:04:43] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 97239
+[21/Jan/2025 01:05:43] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:05:43] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:05:56] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:05:56] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:06:58] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:06:58] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:07:06] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 121, in get
+    return response(response)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:07:06] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 103003
+[21/Jan/2025 01:07:47] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:07:47] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:07:49] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 121, in get
+    return response({"1": b})
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:07:49] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 102820
+[21/Jan/2025 01:08:00] DEBUG [django.db.backends:151] (0.016) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:08:00] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:08:05] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 121, in get
+    return response({"1": b})
+           ^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:08:05] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 99414
+[21/Jan/2025 01:08:26] DEBUG [django.db.backends:151] (0.015) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:08:26] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:08:29] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 121, in get
+    return response(b[0])
+           ^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:08:29] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 99039
+[21/Jan/2025 01:09:24] DEBUG [django.db.backends:151] (0.015) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:09:24] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:09:26] ERROR [django.request:241] Internal Server Error: /films/listoffilms/
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\SaaS Passion4Tech\Streaming\Backend\StreamingApp\FilmStreamingApp\api\views.py", line 121, in get
+    return response({'ip1': b})
+           ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Response' object is not callable
+[21/Jan/2025 01:09:26] ERROR [django.server:212] "GET /films/listoffilms/ HTTP/1.1" 500 99241
+[21/Jan/2025 01:09:46] DEBUG [django.db.backends:151] (0.015) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:09:46] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:09:59] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:09:59] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:10:18] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:10:18] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:10:39] DEBUG [django.db.backends:151] (0.000) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+[21/Jan/2025 01:10:39] DEBUG [django.db.backends:151] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+[21/Jan/2025 01:14:23] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:14:31] DEBUG [django.db.backends:151] (0.000) SELECT "FilmStreamingApp_filmsapplication"."id", "FilmStreamingApp_filmsapplication"."name", "FilmStreamingApp_filmsapplication"."description", "FilmStreamingApp_filmsapplication"."director", "FilmStreamingApp_filmsapplication"."image", "FilmStreamingApp_filmsapplication"."liked_yes_or_no", "FilmStreamingApp_filmsapplication"."seen_yes_or_no" FROM "FilmStreamingApp_filmsapplication"; args=(); alias=default
+[21/Jan/2025 01:14:31] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:14:31] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Caroussel'; args=('Caroussel',); alias=default
+[21/Jan/2025 01:14:31] ERROR [FilmStreamingApp.api.views:29] results: [{'name': 'film1', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film2', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_2AXrlV7.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_wGQSNXS.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_KrTKyLw.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_k2UUH7i.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dudfvdfdis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_e9GW7Lb.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'qwdwe21', 'director': 'Sviluppo app', 'description': 'efiofnnr rreieriernv evieve', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111111', 'director': '22222222222', 'description': 'efiofnnr rreieriernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_O4HBgZL.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321', 'director': '22222232222222', 'description': 'efiofnnr rreier23iernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_wT6ROKN.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321efer', 'director': '22222232222222eferfre', 'description': 'efiofnnr rreier23iernv evievewqde3344bhhhhhhhhhhh', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_ycp04xW.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}]
+[21/Jan/2025 01:14:31] WARNING [FilmStreamingApp.api.views:31] results: [{'name': 'film1', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film2', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_2AXrlV7.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_wGQSNXS.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_KrTKyLw.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_k2UUH7i.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dudfvdfdis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_e9GW7Lb.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'qwdwe21', 'director': 'Sviluppo app', 'description': 'efiofnnr rreieriernv evieve', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111111', 'director': '22222222222', 'description': 'efiofnnr rreieriernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_O4HBgZL.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321', 'director': '22222232222222', 'description': 'efiofnnr rreier23iernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_wT6ROKN.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321efer', 'director': '22222232222222eferfre', 'description': 'efiofnnr rreier23iernv evievewqde3344bhhhhhhhhhhh', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_ycp04xW.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}]
+[21/Jan/2025 01:15:11] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:15:21] DEBUG [django.db.backends:151] (0.000) SELECT "FilmStreamingApp_filmsapplication"."id", "FilmStreamingApp_filmsapplication"."name", "FilmStreamingApp_filmsapplication"."description", "FilmStreamingApp_filmsapplication"."director", "FilmStreamingApp_filmsapplication"."image", "FilmStreamingApp_filmsapplication"."liked_yes_or_no", "FilmStreamingApp_filmsapplication"."seen_yes_or_no" FROM "FilmStreamingApp_filmsapplication"; args=(); alias=default
+[21/Jan/2025 01:15:21] DEBUG [django.db.backends:151] (0.015) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Caroussel'; args=('Caroussel',); alias=default
+[21/Jan/2025 01:15:21] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:15:21] ERROR [FilmStreamingApp.api.views:29] results: [{'name': 'film1', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film2', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_2AXrlV7.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_wGQSNXS.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film3', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_KrTKyLw.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_k2UUH7i.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'film45', 'director': 'cyrus', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dudfvdfdis aute irudwcdwcvvdsvfdvwre dolor inqwdwe', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/affiche_e9GW7Lb.png', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': 'qwdwe21', 'director': 'Sviluppo app', 'description': 'efiofnnr rreieriernv evieve', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111111', 'director': '22222222222', 'description': 'efiofnnr rreieriernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_O4HBgZL.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321', 'director': '22222232222222', 'description': 'efiofnnr rreier23iernv evievewqde3344', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_wT6ROKN.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}, {'name': '1111111114321efer', 'director': '22222232222222eferfre', 'description': 'efiofnnr rreier23iernv evievewqde3344bhhhhhhhhhhh', 'image': 'http://127.0.0.1:8000/media/images/film_cover_image/tof_ycp04xW.jpg', 'liked_yes_or_no': False, 'seen_yes_or_no': False}]
+[21/Jan/2025 01:17:09] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:23:23] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:25:17] DEBUG [django.db.backends:151] (0.016) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:26:05] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:26:05] DEBUG [django.db.backends:151] (0.015) SELECT "FilmStreamingApp_filmsapplication"."id", "FilmStreamingApp_filmsapplication"."name", "FilmStreamingApp_filmsapplication"."description", "FilmStreamingApp_filmsapplication"."director", "FilmStreamingApp_filmsapplication"."image", "FilmStreamingApp_filmsapplication"."liked_yes_or_no", "FilmStreamingApp_filmsapplication"."seen_yes_or_no" FROM "FilmStreamingApp_filmsapplication"; args=(); alias=default
+[21/Jan/2025 01:26:05] DEBUG [django.db.backends:151] (0.015) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Caroussel'; args=('Caroussel',); alias=default
+[21/Jan/2025 01:28:36] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default
+[21/Jan/2025 01:30:16] DEBUG [django.db.backends:151] (0.000) SELECT "SaasMultimedia_multimedia"."id", "SaasMultimedia_multimedia"."image", "SaasMultimedia_multimedia"."alt", "SaasMultimedia_multimedia"."title", "SaasMultimedia_multimedia"."section_multimedia_type" FROM "SaasMultimedia_multimedia" WHERE "SaasMultimedia_multimedia"."section_multimedia_type" = 'Logo'; args=('Logo',); alias=default

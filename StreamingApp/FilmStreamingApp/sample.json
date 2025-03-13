@@ -1,0 +1,62 @@
+{
+    "status": "success",
+    "message": "completed",
+    "result": {
+        "movieAnalysis": {
+            "title": "Inception",
+            "analysis": {
+                "themes": [
+                    "Reality vs. Illusion",
+                    "The Nature of Time",
+                    "Guilt and Redemption"
+                ],
+                "style": "Inception is characterized by its complex narrative structure, blending reality with dreams in a visually stunning manner. The film utilizes practical effects, innovative techniques for dream representation, and a non-linear storytelling approach to engage viewers in a labyrinthine plot.",
+                "impact": "Upon its release in 2010, Inception had a significant cultural impact, influencing a new wave of sci-fi films and discussions around the nature of reality. It sparked a resurgence in the exploration of subconscious themes in cinema and is often cited in discussions of modern filmmaking techniques, especially regarding visual effects and sound design.",
+                "uniqueElements": [
+                    "Dream Layers",
+                    "The Use of a 'Kick' Mechanism"
+                ]
+            },
+            "similarMovies": [
+                {
+                    "title": "The Matrix",
+                    "year": "1999",
+                    "director": "Lana & Lilly Wachowski",
+                    "similarityReason": "Both films explore complex themes of reality and perception, immersing characters in simulated realities. They challenge the nature of existence and consciousness, presenting visually groundbreaking narratives.",
+                    "uniqueAspects": "The Matrix introduced a distinct aesthetic with its iconic green tint and use of 'bullet time' effects, while Inception's layered dream structure offers a different approach to the exploration of subconscious elements."
+                },
+                {
+                    "title": "Eternal Sunshine of the Spotless Mind",
+                    "year": "2004",
+                    "director": "Michel Gondry",
+                    "similarityReason": "Both films use the concept of memory manipulation and explore the emotional consequences of altering perceptions of reality. They delve into the complexities of human relationships and memory.",
+                    "uniqueAspects": "Eternal Sunshine stands out with its focus on personal identity and emotional authenticity through a more intimate and less action-driven approach compared to the high-stakes heist narrative of Inception."
+                },
+                {
+                    "title": "Interstellar",
+                    "year": "2014",
+                    "director": "Christopher Nolan",
+                    "similarityReason": "Both directed by Nolan, these films utilize themes of time and space in unconventional ways. Interstellar also features complex narrative structures and explores emotional ties between characters across vast distances, akin to the deeper emotional elements found in Inception.",
+                    "uniqueAspects": "Interstellar emphasizes scientific theories related to black holes and relativity, incorporating a sense of epic scope and exploration, while Inception is grounded in the mind's architecture and heist motifs."
+                },
+                {
+                    "title": "Paprika",
+                    "year": "2006",
+                    "director": "Satoshi Kon",
+                    "similarityReason": "Paprika and Inception share the concept of entering dreams and manipulating the subconscious. Both films blur the lines between dreams and reality with striking visual storytelling.",
+                    "uniqueAspects": "Paprika is an anime that offers a more surrealistic and whimsical exploration of the dream world, employing vibrant colors and dynamic animation techniques, while Inception presents a more structured narrative with a thriller element."
+                }
+            ]
+        },
+        "meta": {
+            "analysisDepth": "Comprehensive thematic and stylistic analysis, including cultural impact and narrative techniques",
+            "comparisonCriteria": [
+                "Themes of Reality and Perception",
+                "Narrative Structure and Visual Style"
+            ],
+            "recommendationConfidence": "High confidence in recommendations based on thematic and stylistic ties"
+        }
+    },
+    "cacheTime": 1737382413725,
+    "time": 1737382414252
+}
